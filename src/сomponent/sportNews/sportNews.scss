@@ -1,0 +1,106 @@
+
+
+// Подключение шрифтов
+body {
+    font-family: 'Roboto', sans-serif;
+    }
+
+    .sport-news__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    }
+
+    .sport-news__item-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    }
+
+    .sport-news__item-description {
+    font-family: 'Roboto', sans-serif;
+    }
+
+
+
+
+
+
+$sport-color: #1D4ED8;
+$dark-sport-color: #1E3A8A;
+$background-color: #F1F5F9;
+$text-color: #333;
+$hover-color: #3B82F6;
+
+.sport-news {
+  padding: 20px;
+  background-color: $background-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sport-news__title {
+  font-size: 32px;
+  color: $dark-sport-color;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.sport-news__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sport-news__item {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;  // Центрирует элементы по вертикали
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.sport-news__item-image {
+  width: 100px;  // Устанавливаем фиксированную ширину
+  height: 75px;  // Устанавливаем фиксированную высоту
+  object-fit: cover;  // Картинка будет покрывать указанные размеры, сохраняя пропорции
+  border-radius: 8px;
+  margin-right: 20px;  // Отступ между картинкой и текстом
+}
+
+.sport-news__item-content {
+  flex: 1;
+}
+
+.sport-news__item-title {
+  font-size: 20px;
+  color: $sport-color;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sport-news__item-description {
+  font-size: 16px;
+  color: $text-color;
+  margin-bottom: 10px;
+}
+
+.sport-news__item-link {
+  font-size: 14px;
+  color: $hover-color;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($hover-color, 10%);
+  }
+}
