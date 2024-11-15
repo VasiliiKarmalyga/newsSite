@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import SportNews from './сomponent/sportNews/SportNews'; // Импортируем компонент с новостями
+import './App.css'; // 
+const App = () => {
+  // Пример данных для новостей
+  const newsData = [
+    
+  ];
+  
 
-function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Новости тенниса</h1>
+      <SportNews news={newsData} /> {/* Передаем данные в компонент */}
     </div>
   );
-}
+};
 
 export default App;
