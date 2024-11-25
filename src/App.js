@@ -1,20 +1,28 @@
-// App.js
-import React from 'react';
-import SportNews from './сomponent/sportNews/SportNews'; // Импортируем компонент с новостями
-import './App.css'; // 
-const App = () => {
-  // Пример данных для новостей
-  const newsData = [
-    
-  ];
-  
+import React, { useState, useEffect } from 'react';
+import Header from './сomponent/header/Header';
+import SportsNews from './component/sportsNews/SportNews';
 
-  return (
-    <div className="App">
-      <h1>Новости тенниса</h1>
-      <SportNews news={newsData} /> {/* Передаем данные в компонент */}
-    </div>
-  );
+import './App.scss'; // Импорт стилей
+
+const App = () => {
+    const [selectedCategory, setSelectedCategory] = useState('');  // Категория по умолчанию
+    const [categories, setCategories] = useState(["Football", "Basketball", "Tennis", "Baseball"]);
+
+    // Установим категорию по умолчанию на "Football" при первом рендере
+    useEffect(() => {
+        setSelectedCategory('Football');
+    }, []);
+
+    return (
+        <div className="app">
+            <Header
+                categories={categories} 
+                selectedCategory={selectedCategory} 
+                onCategorySelect={setSelectedCategory} // При клике меняем выбранную категорию
+            />
+            <SportsNews category={selectedCategory} /> {/* Передаем выбранную категорию */}
+        </div>
+    );
 };
 
 export default App;
